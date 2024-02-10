@@ -1,0 +1,77 @@
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    display: flex;
+}
+
+.siteLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Headers {
+
+}
+.Content {
+
+}
+.sider {
+    background-color: white;
+    height: 100vh;
+    position: relative;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.site-layout-sub-header-background {
+    background: #fff;
+}
+
+.siteLayoutBackground {
+    background: #fff;
+}
+
+.innerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 92vh;
+}
+
+.logOut {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    transform: translateY(-100%);
+    padding-bottom: 50px;
+    display: flex;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+
+.backgroundTrigger {
+
+}
+
+.trigger {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(100%);
+    background-color: white;
+    width: 20px;
+    height: 66px;
+}
+
+
+
+
+
