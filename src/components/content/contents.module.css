@@ -1,0 +1,8 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    max-width: 750px;
+    min-width: 175px;
+
+}

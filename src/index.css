@@ -1,6 +1,15 @@
 :root {
+    --font-family: 'Inter', sans-serif;
+    /*colors*/
+    --primary-color: #888888;
+
+    --primary-light-6: #2F54EB;
+    --primary-light-9: #061178;
+
+    --neutral-gray-1: #FFFFFF;
+    --neutral-gray-10: #262626;
+
     margin: 0;
     padding: 0;
 }
-
 

@@ -1,0 +1,26 @@
+.list {
+    padding: 24px;
+    margin-top: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--neutral-gray-1);
+    color: var(--primary-light-9);
+
+}
+
+.list > li::before {
+    content: "- ";
+}
+
+@media (width < 670px) {
+    .list {
+        padding: 12px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+

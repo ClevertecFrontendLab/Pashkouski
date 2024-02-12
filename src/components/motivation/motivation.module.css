@@ -1,0 +1,17 @@
+.motivation {
+    display: block;
+    padding: 24px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    background-color: #F0F5FF;
+    color: #262626;
+    margin: 0;
+}
+
+@media (width < 670px) {
+    .motivation {
+        padding: 12px;
+    }
+}
+

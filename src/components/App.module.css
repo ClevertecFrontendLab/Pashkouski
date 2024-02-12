@@ -1,47 +1,19 @@
-.container {
+.layout {
     max-width: 1440px;
-    margin: 0 auto;
-    background-color: #1a1a1a;
-    display: flex;
+    margin: auto;
 }
+
+
 
 .siteLayout {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.Headers {
-
-}
-.Content {
-
-}
-.sider {
-    background-color: white;
-    height: 100vh;
-    position: relative;
-}
-
-.logo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: #ffffff;
-}
-
-.site-layout-sub-header-background {
-    background: #fff;
-}
-
-.siteLayoutBackground {
-    background: #fff;
-}
-
-.innerMenu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 92vh;
+    background-image: url("../assets/Main_page_light.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
 }
 
 .logOut {
@@ -56,22 +28,13 @@
 }
 
 
-.backgroundTrigger {
+@media (width < 768px) {
+    .siteLayout {
+        overflow-y: scroll;
+        min-height: 100vh;
+        height: auto;
+    }
 
 }
-
-.trigger {
-    display: flex;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(100%);
-    background-color: white;
-    width: 20px;
-    height: 66px;
-}
-
-
-
 
 
