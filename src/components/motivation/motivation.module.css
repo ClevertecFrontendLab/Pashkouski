@@ -1,12 +1,18 @@
 .motivation {
     display: block;
+
     padding: var(--gap-xs-7);
+    margin: 0;
+
+    background-color: var(--neutral-gray-1);
+}
+
+.motivation :global(.ant-typography) {
     font-family: var(--font-family);
     font-weight: var(--font-weight-medium);
     font-size: var(--gap-xs-5);
-    background-color: var(--neutral-gray-1);
+
     color: var(--neutral-gray-10);
-    margin: 0;
 }
 
 @media (width < 670px) {

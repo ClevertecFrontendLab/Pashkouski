@@ -1,7 +1,9 @@
 .footer {
     display: flex;
     justify-content: space-between;
+
     margin: 0 var(--gap-xs-7) var(--gap-s-5);
+
     color: var(--primary-light-6);
 }
 
@@ -14,22 +16,28 @@
 .innerBlock {
     display: flex;
     flex-direction: column;
-    background-color: var(--neutral-gray-1)
+
+    background-color: var(--neutral-gray-1);
 
 }
 
 .firstSpan {
     display: block;
     text-align: start;
-    color: var(--primary-light-6);
+
     width: 100%;
+
+    color: var(--primary-light-6);
 }
 
 .secondSpan {
     display: block;
-    text-align: start;
-    color: var(--neutral-gray-7);
+
     width: 100%;
+
+    text-align: start;
+
+    color: var(--neutral-gray-7);
 }
 
 .innerBlockInfo {
@@ -37,10 +45,12 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: var(--gap-x-1) solid var(--primary-color);
+
     width: 100%;
     gap: var(--gap-x-8);
     padding: var(--gap-xs-1) var( --gap-xs-7);
+
+    border-bottom: var(--gap-x-1) solid var(--primary-color);
 }
 
 .innerBlockLink {
@@ -57,16 +67,19 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        min-width: var(--gap-xl-3);
+
+        min-width: var(--gap-xl-1);
         margin: auto;
         gap: var(--gap-xs-7);
         width: 100%;
+
     }
 
     .reviews {
-        margin-bottom: var(--gap-s-6);
         display: flex;
         justify-content: center;
+
+        margin-bottom: var(--gap-s-6);
         width: 100%;
     }
 
@@ -74,12 +87,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: var(--gap-gx-4);
     }
+
     .secondSpan {
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: var(--gap-gx-4);
     }
 }

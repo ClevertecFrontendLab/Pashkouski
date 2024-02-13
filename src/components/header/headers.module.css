@@ -1,19 +1,21 @@
 .header {
     display: flex;
     flex-direction: column;
+
     padding: 0;
 }
 
 .title {
+
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-xs);
-    letter-spacing: 0;
 }
 
 .headerWrapper {
     display: block;
     padding: 0;
+
     background-color: var(--neutral-gray-1);
 }
 
@@ -21,39 +23,50 @@
 .headerInner {
     display: flex;
     justify-content: space-between;
+
     width: 100%;
     padding: var(--gap-x-6);
     margin-right: var(--gap-g-10_1);
 }
 
 .button > Button {
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-left: var(--gap-x-10);
+    border: none;
     padding: var(--gap-xs-1) 0 var(--gap-xs-1) 0;
-    text-decoration: none;
-    color: var(--neutral-gray-10);
-    cursor: pointer;
     width: var(--gap-g-1);
     height: var(--gap-s-1);
     gap: var(--gap-x-10);
+
+
+    text-decoration: none;
+
+    background-color: rgba(0, 0, 0, 0);
+    color: var(--neutral-gray-10);
+
+    cursor: pointer;
 }
 
 h1 {
     display: block;
+
     padding: var(--gap-x-1);
+
     font-size: var(--font-size-l_1);
     font-weight: var(--font-weight-bold);
 }
 
 @media (width < 1000px) {
     .header {
+        display: flex;
+
+        width: 100%;
+
         padding: var(--gap-x-8);
         margin: 0;
-        display: flex;
-        width: 100%;
     }
 
     h1 {

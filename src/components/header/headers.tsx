@@ -2,7 +2,8 @@ import s from "./headers.module.css";
 import {Button, PageHeader} from "antd";
 import {SettingOutlined} from "@ant-design/icons";
 import {Content} from "antd/es/layout/layout";
-import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
+import useBreakpoint from "antd/es/grid/hooks/useBreakpoint"
+
 
 export const Headers = () => {
     const breakpoints = useBreakpoint();
@@ -12,7 +13,7 @@ export const Headers = () => {
                 <Content>
                     {
                         <div className={s.header}>
-                            <div className={s.title}> Главная </div>
+                            <div className={s.titless}> Главная </div>
                             <section className={s.headerInner}>
                                 <h1>
                                     Приветствуем тебя в CleverFit — приложении, которое

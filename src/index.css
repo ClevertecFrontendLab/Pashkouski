@@ -1,14 +1,14 @@
 :root {
     --font-family: 'Inter', sans-serif;
-    /*colors*/
 
+    /*colors*/
     --primary-color: #888888;
     --primary-light-6: #2F54EB;
     --primary-light-9: #002264;
 
     --neutral-gray-1: #FFFFFF;
-    --neutral-gray-7: #8C8C8C;
     --neutral-gray-5: #d9d9d9;
+    --neutral-gray-7: #8C8C8C;
     --neutral-gray-10: #262626;
 
 
@@ -26,7 +26,7 @@
     --font-size-m: 24px;
     --font-size-l: 36px;
     --font-size-l_1: 38px;
-    --font-size-xl: 42px;  /*--font-size-xxl: ..*/
+    --font-size-xl: 42px; /*--font-size-xxl: ..*/
 
     /*font weights */
     --font-weight-regular: 400;
@@ -70,7 +70,6 @@
     --gap-sm-10: 70px;
 
 
-
     --gap-g-1: 130px;
     --gap-g-2: 150px;
     --gap-g-4: 160px;
@@ -83,19 +82,16 @@
     --gap-gx-2: 240px;
     --gap-gx-4: 270px;
 
-    --gap-xl-2: 300px;
-    --gap-xl-3: 310px;
+
+    --gap-xl-1: 310px;
+    --gap-xl-2: 315px;
     --gap-xl-6: 340px;
 
 
-
-    --gap-xxl-4:  700px;
-    --gap-xxl-6:  800px;
+    --gap-xxl-4: 700px;
+    --gap-xxl-6: 800px;
 
     --gap-xxl-10: 1440px;
-
-
-
 
     margin: 0;
     padding: 0;
