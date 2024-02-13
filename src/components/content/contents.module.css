@@ -1,0 +1,9 @@
+.content {
+    display: flex;
+    flex-direction: column;
+
+    padding: var(--gap-xs-7);
+    max-width: var(--gap-xxl-6);
+    min-width: var(--gap-g-7);
+    margin: 0;
+}

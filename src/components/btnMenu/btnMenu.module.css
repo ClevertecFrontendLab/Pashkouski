@@ -1,0 +1,26 @@
+.myMenu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    margin: var(--gap-xs-3) var(--gap-x-1) var(--gap-x-1) var(--gap-x-1);
+    gap: var(--gap-x-8);
+}
+
+
+@media (width < 670px) {
+    .title {
+        min-height: var(--gap-sm-5);
+        width: 100%;
+
+        white-space: pre-wrap;
+    }
+    .myMenu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .myMenu > div {
+      min-width: var( --gap-xl-2);
+    }
+}

@@ -1,0 +1,86 @@
+.sider {
+    position: relative;
+    height: auto;
+
+    background-color: var(--neutral-gray-1);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    filter: blur(0 8);
+}
+
+
+.trigger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(100%);
+    width: var(--gap-xs-5);
+    height: var(--gap-sm-8);
+
+    background-color: var(--neutral-gray-1);
+    clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+    border: none;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    background-color: #ffffff;
+}
+
+.innerMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: calc(100vh - var(--gap-sm-7));
+
+    background-color: var(--neutral-gray-1);
+}
+
+#mobileСollapsed :global(.ant-menu-item ) {
+    text-align: center;
+}
+
+
+#menuСollapsed :global(.ant-menu-item) {
+    display: flex;
+
+    gap: var(--gap-xs-5);
+}
+
+#myMenu :global(.ant-menu-item .ant-menu-item-active .ant-menu-item-selected .ant-menu-item-only-child) {
+    align-content: center;
+    background-color: red;
+}
+
+.innerMenu :global(.ant-menu-item-selected ) {
+    color: var(--neutral-gray-10);
+}
+
+.innerMenu :global(.ant-menu-item-icon ) {
+    color: var(--primary-light-9);
+}
+
+@media (width < 768px) {
+    .sider {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: auto;
+
+        z-index: 10;
+    }
+
+    .trigger {
+        top: var(--gap-xs-7)
+    }
+}
