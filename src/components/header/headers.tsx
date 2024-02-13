@@ -15,7 +15,7 @@ export const Headers = () => {
             <PageHeader title="Главная">
                     <Card bordered={false} className={s.header}>
                         <Typography>
-                            <Title line={1}>
+                            <Title >
                                 Приветствуем тебя в CleverFit — приложении, которое
                                 поможет тебе добиться своей
                                 мечты!
@@ -28,7 +28,7 @@ export const Headers = () => {
                             ) : breakpoints.sm ? (
                                 <Button children={'Настройки'}
                                 />
-                            ) : <SettingOutlined/>
+                            ) : <SettingOutlined id={s.mobileIconSettings}/>
                         }
                     </Card>
             </PageHeader>

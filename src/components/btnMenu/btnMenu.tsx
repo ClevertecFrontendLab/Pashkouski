@@ -1,10 +1,13 @@
 import s from './btnMenu.module.css'
-import {CalendarOutlined, HeartFilled, IdcardOutlined} from "@ant-design/icons";
+import {HeartFilled, IdcardOutlined} from "@ant-design/icons";
 
 import {Cards} from "@components/cards/cards.tsx";
+import {CalendarMenu} from "../../assets/img/calenderMenu.tsx";
 
 
 export const BtnMenu = () => {
+
+
     const items = [
         {
             titleBlock: 'Расписать тренировки',
@@ -14,12 +17,12 @@ export const BtnMenu = () => {
         {
             titleBlock: 'Назначить календарь',
             bntName: 'Календарь',
-            icon: <IdcardOutlined style={{color: `var(--primary-light-6)`}}/>
+            icon: <CalendarMenu style={{color: `var(--primary-light-6)`}}/>
         },
         {
             titleBlock: 'Заполнить профиль',
             bntName: 'Профиль',
-            icon: <CalendarOutlined style={{color: `var(--primary-light-6)`}}/>
+            icon: <IdcardOutlined style={{color: `var(--primary-light-6)`}}/>
         }
     ]
 

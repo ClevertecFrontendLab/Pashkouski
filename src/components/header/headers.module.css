@@ -1,5 +1,5 @@
 .headerWrapper {
-    background-color: var(--neutral-gray-1);
+    background-color: var(--light-geekblue-1);
 }
 
 .headerWrapper :global(.ant-page-header-heading-title){
@@ -21,16 +21,34 @@
     justify-content: space-between;
 
     padding: 0;
-    gap: 10px
+    gap: 10px;
+
+    background-color: var(--light-geekblue-1);
 }
 
 .header :global(.ant-btn) {
     margin-left: var(--gap-x-10);
     padding-top: var(--gap-x-10);
 
+    background-color: var(--light-geekblue-1);
+
     border: none;
     cursor: pointer;
 }
+
+#mobileIconSettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--neutral-gray-1);
+    border: 1px var(--neutral-gray-5);
+
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+}
+
 
 @media (width < 1000px) {
     .header :global(h1.ant-typography) {

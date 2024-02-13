@@ -7,6 +7,7 @@
     filter: blur(0 8);
 }
 
+
 .trigger {
     display: flex;
     justify-content: center;
@@ -42,7 +43,22 @@
     min-height: calc(100vh - var(--gap-sm-7));
 
     background-color: var(--neutral-gray-1);
+}
 
+#mobileСollapsed :global(.ant-menu-item ) {
+    text-align: center;
+}
+
+
+#menuСollapsed :global(.ant-menu-item) {
+    display: flex;
+
+    gap: var(--gap-xs-5);
+}
+
+#myMenu :global(.ant-menu-item .ant-menu-item-active .ant-menu-item-selected .ant-menu-item-only-child) {
+    align-content: center;
+    background-color: red;
 }
 
 .innerMenu :global(.ant-menu-item-selected ) {

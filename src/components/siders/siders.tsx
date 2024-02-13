@@ -1,6 +1,5 @@
 import s from "./siders.module.css";
 import {
-    CalendarOutlined,
     HeartFilled, IdcardOutlined,
     MenuFoldOutlined,
     MenuUnfoldOutlined, TrophyFilled
@@ -13,6 +12,7 @@ import {Button, Menu} from "antd";
 import {FC} from "react";
 import Icon, {CustomIconComponentProps} from "@ant-design/icons/es/components/Icon";
 import {Logout} from '../../assets/img/logOut.tsx'
+import {Calendar} from '../../assets/img/calender.tsx'
 
 type SidersType = {
     open: boolean
@@ -25,6 +25,9 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
     const breakpoints = useBreakpoint();
     const LogOut = (props: Partial<CustomIconComponentProps>) => (
         <Icon component={Logout} {...props} />
+    );
+    const CalendarOutlined = (props: Partial<CustomIconComponentProps>) => (
+        <Icon component={Calendar} {...props} />
     );
     const items = [
         {
@@ -110,6 +113,7 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
                             items={items}
                         />
                         <Menu
+                            id={s.menuСollapsed}
                             theme="light"
                             mode="inline"
                             items={itemsCollapsed}
@@ -123,6 +127,7 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
                             items={itemsMobile}
                         />
                         <Menu
+                            id={s.mobileСollapsed}
                             theme="light"
                             mode="inline"
                             items={itemsMobileСollapsed}

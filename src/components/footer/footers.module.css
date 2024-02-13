@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 
     margin: 0 var(--gap-xs-7) var(--gap-s-5);
 
@@ -55,7 +56,7 @@
     gap: var(--gap-x-8);
     padding: var(--gap-xs-1) var( --gap-xs-7);
 
-    border-bottom: var(--gap-x-1) solid var(--primary-color);
+    border-bottom: var(--gap-x-1) solid var(--neutral-gray-5);
 }
 
 .innerBlockLink {
