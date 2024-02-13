@@ -11,6 +11,7 @@
     background-image: url("../assets/Main_page_light.png");
     background-size: cover;
     background-repeat: no-repeat;
+    max-height: 100%; /*///432*/
     min-height: 100vh;
     box-shadow: 0 0 var(--gap-x-8) rgba(0, 0, 0, 0.15);
 }

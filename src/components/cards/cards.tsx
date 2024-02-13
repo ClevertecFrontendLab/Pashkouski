@@ -1,6 +1,8 @@
 import s from "./cards.module.css";
 import {Button} from "antd";
 import {FC, ReactElement} from "react";
+import Card from "antd/es/card/Card";
+
 
 type CardsType = {
     titleBlock: string
@@ -9,13 +11,10 @@ type CardsType = {
 }
 
 export const Cards: FC<CardsType> = ({titleBlock, bntName, Icon}) => {
-     return (
-        <div className={s.cards}>
-            <div className={s.title}>
-                {titleBlock}
-            </div>
-            <Button children={bntName} icon={Icon} />
-        </div>
+      return (
+         <Card className={s.cards} title={titleBlock}>
+             <Button children={bntName} icon={Icon} />
+         </Card>
     );
 };
 

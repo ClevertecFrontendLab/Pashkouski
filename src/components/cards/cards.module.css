@@ -1,7 +1,5 @@
 .cards {
     background-color: var(--neutral-gray-1);
-    max-width: var(--gap-gx-2);
-    min-width: var(--gap-g-4);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -9,34 +7,40 @@
     flex-grow: 1;
 }
 
-.title {
+.cards :global(.ant-card-body) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: var(--gap-s-7-5);
-    width: 100%;
-    border-bottom: 1px solid #d9d9d9;
-    font-weight: 400;
-    font-size: var(--font-size-s);
+    padding: 0;
+    min-width: var(--gap-g-4);
 }
 
-.cards > button {
+.cards :global(.ant-card-head) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    border-bottom: var(--gap-x-1) solid var(--neutral-gray-5);
+
+    height: auto;
+}
+
+.cards :global(.ant-card-head-title) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-wrap: break-word;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-s);
+
+}
+
+.cards :global(.ant-btn-default) {
     color: var(--primary-light-6);
-    display: block;
     margin: var(--gap-xs-1) 0;
     background-color: rgba(0, 0, 0, 0);
     border: none;
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-xs);
-}
-@media (width < 670px) {
-    .title {
-        min-height: var(--gap-sm-5);
-        width: 100%;
-        white-space: pre-wrap;
-    }
-
-    .cards {
-        min-width: var(--gap-xl-4);
-    }
 }

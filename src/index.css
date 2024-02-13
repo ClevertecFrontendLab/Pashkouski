@@ -8,6 +8,7 @@
 
     --neutral-gray-1: #FFFFFF;
     --neutral-gray-7: #8C8C8C;
+    --neutral-gray-5: #d9d9d9;
     --neutral-gray-10: #262626;
 
 
@@ -83,13 +84,13 @@
     --gap-gx-4: 270px;
 
     --gap-xl-2: 300px;
-    --gap-xl-4: 320px;
+    --gap-xl-3: 310px;
     --gap-xl-6: 340px;
 
 
 
-    --gap-xxl-4:  670px;
-    --gap-xxl-6:  750px;
+    --gap-xxl-4:  700px;
+    --gap-xxl-6:  800px;
 
     --gap-xxl-10: 1440px;
 

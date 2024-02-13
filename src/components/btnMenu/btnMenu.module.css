@@ -10,7 +10,7 @@
 @media (width < 670px) {
     .title {
         min-height: var(--gap-sm-5);
-        width: auto;
+        width: 100%;
         white-space: pre-wrap;
 
     }
@@ -20,6 +20,6 @@
         align-items: center;
     }
     .myMenu > div {
-      min-width: var( --gap-xl-4);
+      min-width: var( --gap-xl-2);
     }
 }

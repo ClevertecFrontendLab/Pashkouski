@@ -37,10 +37,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: var(--gap-x-1) solid var(--primary-color);
     width: 100%;
-    gap: 8px;
-    padding: 12px 24px;
+    gap: var(--gap-x-8);
+    padding: var(--gap-xs-1) var( --gap-xs-7);
 }
 
 .innerBlockLink {
@@ -57,7 +57,7 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        min-width: var(--gap-xl-4);
+        min-width: var(--gap-xl-3);
         margin: auto;
         gap: var(--gap-xs-7);
         width: 100%;
