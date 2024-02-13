@@ -1,6 +1,6 @@
 .sider {
-    background-color: white;
-    height: auto;
+    background-color: var(--neutral-gray-1);
+    height: 100%;
     position: relative;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
     filter: blur(0 8);
@@ -14,16 +14,17 @@
     right: 0;
     top: 50%;
     transform: translate(100%);
-    background-color: white;
-    width: 20px;
-    height: 66px;
+    background-color: var(--neutral-gray-1);
+    width: var(--gap-xs-5);
+    height: var(--gap-sm-8);
     clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
 }
 
+
 .logo {
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
     background-color: #ffffff;
 }
 
@@ -31,7 +32,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: calc(100vh - 64px);
+    background-color: var(--neutral-gray-1);
+    min-height: calc(100vh - var(--gap-sm-7));
+}
+
+
+
+
+.innerMenu :global(.ant-menu-item-selected ) {
+    color: var(--neutral-gray-10);
+}
+
+.innerMenu :global(.ant-menu-item-icon ) {
+    color: var(--primary-light-9);
 }
 
 @media (width < 768px) {
@@ -40,9 +53,10 @@
         left: 0;
         top: 0;
         z-index: 10;
+        width: 100%;
     }
 
     .trigger {
-        top: 24px;
+        top: var(--gap-xs-7)
     }
 }

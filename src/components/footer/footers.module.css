@@ -1,7 +1,7 @@
 .footer {
     display: flex;
     justify-content: space-between;
-    margin: 0 24px 40px;
+    margin: 0 var(--gap-xs-7) var(--gap-s-5);
     color: var(--primary-light-6);
 }
 
@@ -14,19 +14,22 @@
 .innerBlock {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--neutral-gray-1)
 
 }
 
 .firstSpan {
-    color: var(--primary-light-6);
     display: block;
+    text-align: start;
+    color: var(--primary-light-6);
+    width: 100%;
 }
 
 .secondSpan {
-    color: var(--neutral-gray-10);
     display: block;
-
+    text-align: start;
+    color: var(--neutral-gray-7);
+    width: 100%;
 }
 
 .innerBlockInfo {
@@ -42,7 +45,7 @@
 
 .innerBlockLink {
     display: flex;
-    padding: 12px 0;
+    padding: var(--gap-xs-1) 0;
 }
 
 .innerBlockLink > Button {
@@ -54,14 +57,14 @@
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-        min-width: 320px;
+        min-width: var(--gap-xl-4);
         margin: auto;
-        gap: 24px;
+        gap: var(--gap-xs-7);
         width: 100%;
     }
 
     .reviews {
-        margin-bottom: 42px;
+        margin-bottom: var(--gap-s-6);
         display: flex;
         justify-content: center;
         width: 100%;
@@ -71,12 +74,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 270px;
+        width: var(--gap-gx-4);
     }
-     {
+    .secondSpan {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 270px;
+        width: var(--gap-gx-4);
     }
 }

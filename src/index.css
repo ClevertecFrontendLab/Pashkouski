@@ -1,15 +1,108 @@
 :root {
     --font-family: 'Inter', sans-serif;
     /*colors*/
-    --primary-color: #888888;
 
+    --primary-color: #888888;
     --primary-light-6: #2F54EB;
-    --primary-light-9: #061178;
+    --primary-light-9: #002264;
 
     --neutral-gray-1: #FFFFFF;
+    --neutral-gray-7: #8C8C8C;
     --neutral-gray-10: #262626;
+
+
+    /*line heights */
+    --line-height-xs: 14px;
+    --line-height-s: 16px;
+    --line-height-s_1: 18px;
+    --line-height-m: 24px;
+    --line-height-l: 36px;
+
+    /*font sizes */
+    --font-size-xs: 14px;
+    --font-size-s: 16px;
+    --font-size-s_2: 20px;
+    --font-size-m: 24px;
+    --font-size-l: 36px;
+    --font-size-l_1: 38px;
+    --font-size-xl: 42px;  /*--font-size-xxl: ..*/
+
+    /*font weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+
+    /*(x, xs ,s) , (sm, m, md), (d, lg, l), g, xl и xxl*/
+    /* gap */
+    --gap-x-1: 1px;
+    --gap-x-2: 2px;
+    --gap-x-4: 4px;
+    --gap-x-6: 6px;
+    --gap-x-8: 8px;
+    --gap-x-10: 10px;
+
+    --gap-xs-1: 12px;
+    --gap-xs-2: 14px;
+    --gap-xs-3: 16px;
+    --gap-xs-4: 18px;
+    --gap-xs-5: 20px;
+    --gap-xs-6: 22px;
+    --gap-xs-7: 24px;
+    --gap-xs-8: 26px;
+    --gap-xs-10: 30px;
+
+    --gap-s-1: 32px;
+    --gap-s-2: 34px;
+    --gap-s-4: 38px;
+    --gap-s-5: 40px;
+    --gap-s-6: 42px;
+    --gap-s-7-5: 45px;
+    --gap-s-8: 46px;
+    --gap-s-10: 50px;
+
+    --gap-sm-2: 54px;
+    --gap-sm-4: 58px;
+    --gap-sm-5: 60px;
+    --gap-sm-6: 62px;
+    --gap-sm-7: 64px;
+    --gap-sm-8: 66px;
+    --gap-sm-10: 70px;
+
+
+
+    --gap-g-1: 130px;
+    --gap-g-2: 150px;
+    --gap-g-4: 160px;
+    --gap-g-6: 170px;
+    --gap-g-7: 175px;
+    --gap-g-8: 180px;
+    --gap-g-10: 190px;
+    --gap-g-10_1: 200px;
+
+    --gap-gx-2: 240px;
+    --gap-gx-4: 270px;
+
+    --gap-xl-2: 300px;
+    --gap-xl-4: 320px;
+    --gap-xl-6: 340px;
+
+
+
+    --gap-xxl-4:  670px;
+    --gap-xxl-6:  750px;
+
+    --gap-xxl-10: 1440px;
+
+
+
 
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
+@media (width < 768px) {
+    :root {
+        overflow-y: scroll;
+    }
+}

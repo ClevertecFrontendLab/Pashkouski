@@ -5,7 +5,6 @@ import {AndroidFilled, AppleFilled} from "@ant-design/icons";
 
 export const Footers = () => {
     return (
-
             <section className={s.footer}>
                 <div className={s.reviews}>
                     Оставить отзыв

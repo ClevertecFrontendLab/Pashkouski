@@ -7,11 +7,12 @@ import {
 } from "@ant-design/icons";
 import logo from "../../assets/logo.svg";
 import miniLogo from "../../assets/miniLogo.svg";
-import {Navbar} from "../../shared/navbar.tsx";
 import Sider from "antd/es/layout/Sider";
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint";
-import {Button} from "antd";
+import {Button, Menu} from "antd";
 import {FC} from "react";
+import Icon, {CustomIconComponentProps} from "@ant-design/icons/es/components/Icon";
+import {Logout} from '../../assets/img/logOut.tsx'
 
 type SidersType = {
     open: boolean
@@ -22,6 +23,9 @@ type SidersType = {
 
 export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestId}) => {
     const breakpoints = useBreakpoint();
+    const LogOut = (props: Partial<CustomIconComponentProps>) => (
+        <Icon component={Logout} {...props} />
+    );
     const items = [
         {
             key: '1',
@@ -47,7 +51,7 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
     const itemsCollapsed = [
         {
             key: '1',
-            icon: <CalendarOutlined/>,
+            icon: <LogOut/>,
             label: 'Выход',
         }
     ]
@@ -100,21 +104,27 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
             <div className={s.innerMenu}>
                 {breakpoints.md ?
                     <>
-                        <Navbar
+                        <Menu
+                            theme="light"
+                            mode="inline"
                             items={items}
-                            defaultSelectedKeys={'1'}/>
-                        <Navbar
-                            defaultSelectedKeys={'1'}
-                            items={itemsCollapsed}/>
+                        />
+                        <Menu
+                            theme="light"
+                            mode="inline"
+                            items={itemsCollapsed}
+                        />
                     </>
                     :
                     <>
-                        <Navbar
-                            defaultSelectedKeys={'1'}
+                        <Menu
+                            theme="light"
+                            mode="inline"
                             items={itemsMobile}
                         />
-                        <Navbar
-                            defaultSelectedKeys={'1'}
+                        <Menu
+                            theme="light"
+                            mode="inline"
                             items={itemsMobileСollapsed}
                         />
                     </>

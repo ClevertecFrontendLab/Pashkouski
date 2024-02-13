@@ -26,7 +26,8 @@ export const BtnMenu = () => {
     return (
         <nav className={s.myMenu}>
             {items.map(el =>
-                <Cards bntName={el.bntName} Icon={el.icon} titleBlock={el.titleBlock}/>
+                <Cards bntName={el.bntName} Icon={el.icon} titleBlock={el.titleBlock}
+                />
             )}
         </nav>
     );
