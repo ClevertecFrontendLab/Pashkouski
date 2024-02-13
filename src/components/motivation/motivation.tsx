@@ -1,9 +1,8 @@
 import s from './motivation.module.css'
 import Typography from "antd/es/typography/Typography";
-
+import Title from "antd/es/typography/Title";
 
 export const Motivation = () => {
-    const {Title} = Typography;
     return (
         <>
             <Typography className={s.motivation}>

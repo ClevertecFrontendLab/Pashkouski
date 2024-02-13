@@ -1,40 +1,36 @@
 import s from "./headers.module.css";
 import {Button, PageHeader} from "antd";
 import {SettingOutlined} from "@ant-design/icons";
-import {Content} from "antd/es/layout/layout";
+
 import useBreakpoint from "antd/es/grid/hooks/useBreakpoint"
+import Card from "antd/es/card/Card";
+import Title from "antd/es/typography/Title";
+import Typography from "antd/es/typography/Typography";
 
 
 export const Headers = () => {
     const breakpoints = useBreakpoint();
     return (
         <div className={s.headerWrapper}>
-            <PageHeader style={{padding: '24px 16px'}}>
-                <Content>
-                    {
-                        <div className={s.header}>
-                            <div className={s.titless}> Главная </div>
-                            <section className={s.headerInner}>
-                                <h1>
-                                    Приветствуем тебя в CleverFit — приложении, которое
-                                    поможет тебе добиться своей
-                                    мечты!
-                                </h1>
-                                <div className={s.button}>
-                                    {
-                                        breakpoints.lg ? (
-                                            <Button children={'Настройки'}
-                                                    icon={<SettingOutlined/>}/>
-                                        ) : breakpoints.sm ? (
-                                            <Button children={'Настройки'}
-                                            />
-                                        ) : <SettingOutlined/>
-                                    }
-                                </div>
-                            </section>
-                        </div>
-                    }
-                </Content>
+            <PageHeader title="Главная">
+                    <Card bordered={false} className={s.header}>
+                        <Typography>
+                            <Title line={1}>
+                                Приветствуем тебя в CleverFit — приложении, которое
+                                поможет тебе добиться своей
+                                мечты!
+                            </Title>
+                        </Typography>
+                        {
+                            breakpoints.lg ? (
+                                <Button children={'Настройки'}
+                                        icon={<SettingOutlined/>} style={{display: "block"}}/>
+                            ) : breakpoints.sm ? (
+                                <Button children={'Настройки'}
+                                />
+                            ) : <SettingOutlined/>
+                        }
+                    </Card>
             </PageHeader>
         </div>
     );

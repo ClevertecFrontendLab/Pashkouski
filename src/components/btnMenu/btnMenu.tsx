@@ -1,5 +1,5 @@
 import s from './btnMenu.module.css'
-import {HeartFilled, IdcardOutlined} from "@ant-design/icons";
+import {CalendarOutlined, HeartFilled, IdcardOutlined} from "@ant-design/icons";
 
 import {Cards} from "@components/cards/cards.tsx";
 
@@ -19,7 +19,7 @@ export const BtnMenu = () => {
         {
             titleBlock: 'Заполнить профиль',
             bntName: 'Профиль',
-            icon: <IdcardOutlined style={{color: `var(--primary-light-6)`}}/>
+            icon: <CalendarOutlined style={{color: `var(--primary-light-6)`}}/>
         }
     ]
 

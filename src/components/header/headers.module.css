@@ -1,92 +1,55 @@
-.header {
-    display: flex;
-    flex-direction: column;
-
-    padding: 0;
-}
-
-.title {
-
-    font-family: var(--font-family);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-xs);
-}
-
 .headerWrapper {
-    display: block;
-    padding: 0;
-
     background-color: var(--neutral-gray-1);
 }
 
+.headerWrapper :global(.ant-page-header-heading-title){
+    padding-left: var(--gap-x-10);
 
-.headerInner {
-    display: flex;
-    justify-content: space-between;
-
-    width: 100%;
-    padding: var(--gap-x-6);
-    margin-right: var(--gap-g-10_1);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
 }
 
-.button > Button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    margin-left: var(--gap-x-10);
-    border: none;
-    padding: var(--gap-xs-1) 0 var(--gap-xs-1) 0;
-    width: var(--gap-g-1);
-    height: var(--gap-s-1);
-    gap: var(--gap-x-10);
-
-
-    text-decoration: none;
-
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--neutral-gray-10);
-
-    cursor: pointer;
-}
-
-h1 {
-    display: block;
-
-    padding: var(--gap-x-1);
-
+.header :global(h1.ant-typography) {
     font-size: var(--font-size-l_1);
     font-weight: var(--font-weight-bold);
 }
 
+.headerWrapper :global(.ant-card-body) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 0;
+    gap: 10px
+}
+
+.header :global(.ant-btn) {
+    margin-left: var(--gap-x-10);
+    padding-top: var(--gap-x-10);
+
+    border: none;
+    cursor: pointer;
+}
+
 @media (width < 1000px) {
-    .header {
-        display: flex;
-
-        width: 100%;
-
-        padding: var(--gap-x-8);
-        margin: 0;
-    }
-
-    h1 {
+    .header :global(h1.ant-typography) {
         font-weight: var(--font-weight-medium);
         font-size: var(--font-size-m);
         line-height: var(--line-height-m);
     }
-
 }
 
-
 @media (width < 670px) {
-    .header {
-        padding: var(--gap-x-8);
-        margin: 0;
-    }
+    .header :global(h1.ant-typography) {
+        margin-left: var(--gap-x-10);
+        padding-top: var(--gap-x-10);
 
-    h1 {
         font-weight: var(--font-weight-medium);
         font-size: var(--font-size-s_2);
+
+        border: none;
+        cursor: pointer;
     }
 }
 

@@ -25,6 +25,9 @@
     display: block;
     text-align: start;
 
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-regular);
+
     width: 100%;
 
     color: var(--primary-light-6);
@@ -32,10 +35,12 @@
 
 .secondSpan {
     display: block;
+    text-align: start;
 
     width: 100%;
 
-    text-align: start;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-regular);
 
     color: var(--neutral-gray-7);
 }
