@@ -207,4 +207,4 @@ describe('sprint 2', () => {
         cy.wait('@login');
         cy.url().should('include', '/main');
     });
-});
+ });

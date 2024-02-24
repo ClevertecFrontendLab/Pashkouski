@@ -21,7 +21,7 @@
     justify-content: space-between;
 
     padding: 0;
-    gap: 10px;
+    gap: var(--gap-x-10);
 
     background-color: var(--light-geekblue-1);
 }
@@ -44,8 +44,8 @@
     background-color: var(--neutral-gray-1);
     border: 1px var(--neutral-gray-5);
 
-    min-width: 32px;
-    min-height: 32px;
+    min-width: var(--gap-s-1);
+    min-height: var( --gap-s-1);
     border-radius: 50%;
 }
 

@@ -21,6 +21,7 @@
     --line-height-l: 36px;
 
     /*font sizes */
+    --font-size-x: 12px;
     --font-size-xs: 14px;
     --font-size-s: 16px;
     --font-size-s_2: 20px;
@@ -39,12 +40,15 @@
     --gap-x-1: 1px;
     --gap-x-2: 2px;
     --gap-x-4: 4px;
+    --gap-x-5: 5px;
     --gap-x-6: 6px;
     --gap-x-8: 8px;
     --gap-x-10: 10px;
+    --gap-x-10_5: 11px;
 
     --gap-xs-1: 12px;
     --gap-xs-2: 14px;
+    --gap-xs-2_5: 15px;
     --gap-xs-3: 16px;
     --gap-xs-4: 18px;
     --gap-xs-5: 20px;
@@ -60,6 +64,7 @@
     --gap-s-6: 42px;
     --gap-s-7-5: 45px;
     --gap-s-8: 46px;
+    --gap-s-9: 48px;
     --gap-s-10: 50px;
 
     --gap-sm-2: 54px;
@@ -67,8 +72,14 @@
     --gap-sm-5: 60px;
     --gap-sm-6: 62px;
     --gap-sm-7: 64px;
+    --gap-sm-7_5: 65px;
     --gap-sm-8: 66px;
     --gap-sm-10: 70px;
+    --gap-sm-10_5: 75px;
+
+    --gap-m-1: 80px;
+
+
 
 
     --gap-g-1: 130px;
@@ -82,13 +93,20 @@
 
     --gap-gx-2: 240px;
     --gap-gx-4: 270px;
+    --gap-gx-5: 280px;
 
 
     --gap-xl-1: 310px;
     --gap-xl-2: 315px;
+    --gap-xl-3: 320px;
+    --gap-xl-4: 330px;
     --gap-xl-6: 340px;
+    --gap-xl-7: 350px;
 
 
+    --gap-xxl-2: 500px;
+    --gap-xxl-2_1: 540px;
+    --gap-xxl-3: 600px;
     --gap-xxl-4: 700px;
     --gap-xxl-6: 800px;
 

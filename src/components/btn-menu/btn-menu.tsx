@@ -1,8 +1,8 @@
-import s from './btnMenu.module.css'
+import s from '@components/btn-menu/btn-menu.module.css'
 import {HeartFilled, IdcardOutlined} from "@ant-design/icons";
 
 import {Cards} from "@components/cards/cards.tsx";
-import {CalendarMenu} from "../../assets/img/calenderMenu.tsx";
+import {CalendarMenu} from "@assets/img/calenderMenu.tsx";
 
 
 export const BtnMenu = () => {
@@ -28,8 +28,8 @@ export const BtnMenu = () => {
 
     return (
         <nav className={s.myMenu}>
-            {items.map(el =>
-                <Cards bntName={el.bntName} Icon={el.icon} titleBlock={el.titleBlock}
+            {items.map((el, index) =>
+                <Cards key={index} bntName={el.bntName} Icon={el.icon} titleBlock={el.titleBlock}
                 />
             )}
         </nav>

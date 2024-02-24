@@ -1,0 +1,27 @@
+.authLayout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-image: url("@assets/background-auth.png");
+
+    margin: auto;
+    min-height: 100vh;
+    max-width: var( --gap-xxl-10);
+
+
+}
+.wrapperLayout {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: 1;
+}
