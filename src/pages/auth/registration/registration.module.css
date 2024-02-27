@@ -1,0 +1,48 @@
+.registerForm {
+    position: relative;
+    background-color: white;
+    max-width: var(--gap-xxl-2_1);
+    width: 100%;
+}
+
+
+
+.registerForm :global(.ant-col) {
+    margin-bottom: var(--gap-xs-3)
+}
+
+
+.buttonWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.innerButtonBlock :global(.ant-form-item-control-input-content) {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--gap-xs-3);
+}
+
+.innerButtonBlock :global(.ant-btn.ant-btn-primary) {
+    height: var(--gap-s-5);
+}
+
+.innerButtonBlock :global(.ant-btn.ant-btn-default) {
+    height: var(--gap-s-5);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    background-color: var(--neutral-gray-1);
+}
+
+@media (width < 568px) {
+    .googleBtn :global(span.anticon-google-plus) {
+        display: none;
+    }
+}

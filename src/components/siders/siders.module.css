@@ -29,19 +29,36 @@
 .logo {
     display: flex;
     justify-content: center;
-
     width: 100%;
+    background-color: var(--neutral-gray-1);
+    height: auto;
+    padding: 40px 30px 40px 20px;
 
-    background-color: #ffffff;
+}
+
+.logoMini {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--neutral-gray-1);
+    height: auto;
+    margin: 25px 0;
 }
 
 .innerMenu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: calc(100vh - 120px);
+    background-color: var(--neutral-gray-1);
+}
 
-    min-height: calc(100vh - var(--gap-sm-7));
 
+.innerMenuM {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: calc(100vh - 60px);
     background-color: var(--neutral-gray-1);
 }
 
@@ -58,7 +75,6 @@
 
 #myMenu :global(.ant-menu-item .ant-menu-item-active .ant-menu-item-selected .ant-menu-item-only-child) {
     align-content: center;
-    background-color: red;
 }
 
 .innerMenu :global(.ant-menu-item-selected ) {

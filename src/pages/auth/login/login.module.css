@@ -1,0 +1,76 @@
+.loginForm {
+    position: relative;
+    background-color: white;
+    max-width: var(--gap-xxl-2_1);
+    width: 100%;
+}
+
+.loginForm :global(.ant-col) {
+    margin-bottom: var(--gap-xs-3);
+}
+
+
+.buttonWrapper {
+    display: flex;
+    width: 100%;
+}
+
+.innerCheckboxButton :global(.ant-row.ant-form-item-row) {
+    height: var(--gap-s-5);
+}
+
+.innerButtonBlock :global(.ant-form-item-control-input-content) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-xs-3);
+}
+
+.innerButtonBlock :global(.ant-btn.ant-btn-primary) {
+    height: var(--gap-s-5);
+}
+
+.innerButtonBlock :global(.ant-btn.ant-btn-default) {
+    height: var(--gap-s-5);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--neutral-gray-1);
+
+    width: 100%;
+}
+
+.innerCheckboxButton :global(.ant-form-item-control-input-content) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-s);
+
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.innerCheckbox :global(.ant-form-item-row) {;
+    transform: translateY(40%);
+    padding: 0;
+    margin: 0;
+}
+
+.innerCheckboxButton :global(.ant-btn-link) {
+    color: var(--primary-light-6);
+    padding: 0;
+    margin: 0;
+}
+
+
+@media (width < 568px) {
+    .googleBtn :global(span.anticon-google-plus) {
+        display: none;
+    }
+}
