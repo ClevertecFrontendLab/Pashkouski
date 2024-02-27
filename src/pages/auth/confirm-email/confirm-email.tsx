@@ -11,6 +11,7 @@ import {push} from "redux-first-history";
 import {useAppDispatch} from "@hooks/typed-react-redux-hooks.ts";
 
 
+
 export const ConfirmEmail = () => {
         const [confirmEmail] = useConfirmEmailMutation()
         const [variant, setVariant] = useState<'isSuccess' | 'isError'>('isSuccess')
@@ -24,15 +25,23 @@ export const ConfirmEmail = () => {
             'isSuccess':
                 {
                     icon: <Execute/>,
-                    title: 'Введите код для восстановления аккаунта',
-                    text: `Мы отправили вам на e-mail ${emailData} шестизначный код. Введите его в поле ниже.`,
+                    title: ( <span>Неверный код <br/> для восстановления аккаунта</span>),
+                    text: (
+                        <span>
+                            Мы отправили вам на e-mail<b>&ensp;{`${emailData}`}&ensp;</b>шестизначный код. Введите его в поле ниже.
+                        </span>
+                    ),
                     email: 'Не пришло письмо? Проверьте папку Спам.'
                 },
             'isError':
                 {
                     icon: <ErrorIcon/>,
-                    title: 'Неверный код. Введите код для восстановления аккаунта',
-                    text: `Мы отправили вам на e-mail ${emailData}  шестизначный код. Введите его в поле ниже.`,
+                    title: ( <span>Неверный код. Введите код <br className={s.brTitle}/> для восстановления аккаунта</span>),
+                    text: (
+                        <span>
+                            Мы отправили вам на e-mail<b>&ensp;{`${emailData}`}&ensp;</b>шестизначный код. Введите его в поле ниже.
+                        </span>
+                    ),
                     email: 'Не пришло письмо? Проверьте папку Спам..'
                 }
         } as const
@@ -77,6 +86,11 @@ export const ConfirmEmail = () => {
                                 inputProps={{
                                     "data-test-id": "verification-input"
                                 }}
+                                classNames={{
+                                    characterInactive: s.characterInactive,
+                                    container: s.containerVerification,
+                                    character: `${variant == 'isSuccess' ? s.verification : s.verificationError}`
+                            }}
                             />
                         </div>
                         <Typography.Text className={s.text}>

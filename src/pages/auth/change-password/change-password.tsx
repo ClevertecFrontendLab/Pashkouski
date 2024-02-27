@@ -73,7 +73,7 @@ export const ChangePassword = () => {
                             },
                             {validator: validatePassword},
                         ]}
-                        help={'Пароль не менее 8 символов, с заглавной буквой и цифрой'}
+                        help='Пароль не менее 8 символов, с заглавной буквой и цифрой'
                     >
                         <Input.Password
                             required

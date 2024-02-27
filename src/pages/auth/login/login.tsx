@@ -173,7 +173,7 @@ export const Login = () => {
                         >
                             Войти
                         </Button>
-                        <Button type='default' htmlType='submit'>
+                        <Button type='default' htmlType='submit' className={s.googleBtn}>
                             <GooglePlusOutlined/>
                             Войти через Google
                         </Button>

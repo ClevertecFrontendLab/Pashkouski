@@ -91,7 +91,9 @@ export const Registration = () => {
                         message: '',
                     },
                     {validator: validatePassword},
-                ]}>
+                ]}
+                help='Пароль не менее 8 символов, с заглавной буквой и цифрой'
+            >
                 <Input.Password
                     data-test-id='registration-password'
                     required
@@ -131,7 +133,7 @@ export const Registration = () => {
                     data-test-id='registration-submit-button'>
                     Войти
                 </Button>
-                <Button type='default' htmlType='submit'>
+                <Button type='default' htmlType='submit' className={s.googleBtn}>
                     <GooglePlusOutlined/>
                     Регистрация через Google
                 </Button>

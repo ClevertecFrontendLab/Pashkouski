@@ -42,6 +42,9 @@
     margin: 24px 0 0 0;
 }
 
+
+
+
 .inner :global(span.ant-typography){
     display: inline-block;
     text-align: center;
@@ -57,5 +60,40 @@
 }
 .verificationInput {
     margin: var(--gap-xs-5) 0 ;
+
 }
 
+
+.characterInactive {
+    background: transparent;
+}
+
+.verification {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.verificationError {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: var(--light-dustRed-5);
+}
+
+.containerVerification {
+    gap: 12px;
+    height: 40px;
+}
+
+@media (width < 568px) {
+    .container {
+        padding: var(--gap-xs-10) var(--gap-xs-3) ;
+    }
+    .containerVerification {
+        gap: 8px;
+    }
+    .brTitle {
+        display: none;
+    }
+}

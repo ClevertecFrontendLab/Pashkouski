@@ -69,3 +69,8 @@
 }
 
 
+@media (width < 568px) {
+    .googleBtn :global(span.anticon-google-plus) {
+        display: none;
+    }
+}
