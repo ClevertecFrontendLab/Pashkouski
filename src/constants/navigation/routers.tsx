@@ -1,5 +1,5 @@
 import {Navigate, Route, Routes} from "react-router-dom";
-import {App} from "@components/basic-layout/App.tsx";
+import {BasicLayout} from "@components/basic-layout/basic-layout.tsx";
 import {AuthLayout} from "@components/auth-layout/auth-layout.tsx";
 import {Auth} from "@pages/auth/auth/auth.tsx";
 import {paths} from "@constants/paths.ts";
@@ -13,16 +13,27 @@ import {ChangePassword} from "@pages/auth/change-password/change-password.tsx";
 import {ErrorCheckEmailNoExist} from "@shared/error-check-email-no-exist/error-check-email-no-exist.tsx";
 import {ErrorChangePassword} from "@shared/error-change-password/error-change-password.tsx";
 import {SuccessChangePassword} from "@shared/success-change-password/success-change-password.tsx";
+import {MainPage} from "@pages/main-page/main-page.tsx";
+import {Feedbacks} from "@pages/feedbacks/feedbacks.tsx";
 
 
 export const routes = [
     {
-        path: paths.MAIN_PAGE,
-        element: <App/>,
-    },
-    {
-        path: paths.MAIN,
-        element: <Navigate to={paths.MAIN_PAGE}/>,
+        element: <BasicLayout/>,
+        children: [
+            {
+                path: paths.MAIN,
+                element: <Navigate to={paths.MAIN_PAGE}/>,
+            },
+            {
+                path: paths.MAIN_PAGE,
+                element: <MainPage />,
+            },
+            {
+                path: paths.FEEDBACKS,
+                element: <Feedbacks />,
+            },
+        ]
     },
     {
         element: <AuthLayout/>,

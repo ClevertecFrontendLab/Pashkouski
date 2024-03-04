@@ -95,6 +95,21 @@ export const authApi = baseApi.injectEndpoints({
                     }
                 },
             },),
+            authGoogle: builder.query({
+                query: () => ({
+                    url: '/auth/google',
+                    method: 'GET',
+                }),
+                async onQueryStarted(_, {dispatch, queryFulfilled}) {
+                    try {
+                        dispatch(isLoadingReducer(true));
+                        await queryFulfilled;
+                        dispatch(isLoadingReducer(false));
+                    } catch {
+                        dispatch(isLoadingReducer(false));
+                    }
+                },
+            },),
 
         }
     },
@@ -105,6 +120,7 @@ export const {
     useLoginMutation,
     useCheckEmailMutation,
     useConfirmEmailMutation,
-    useChangePasswordMutation
+    useChangePasswordMutation,
+    useLazyAuthGoogleQuery
 } = authApi
 

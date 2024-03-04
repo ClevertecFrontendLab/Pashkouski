@@ -1,0 +1,23 @@
+.layout {
+    max-width: var(--gap-xxl-10);
+    margin: 0 auto;
+
+}
+
+
+
+.logOut {
+    display: flex;
+
+    transform: translateY(-100%);
+    padding-bottom: var(--gap-s-10);
+    gap: var(--gap-x-10);
+    padding-right: var(--gap-x-10);
+
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-s_1);
+}
+
+
+

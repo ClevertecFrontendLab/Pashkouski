@@ -68,6 +68,7 @@
     color: var(--neutral-gray-10)
 }
 
+
 @media (width < 670px) {
     .footer {
         display: flex;

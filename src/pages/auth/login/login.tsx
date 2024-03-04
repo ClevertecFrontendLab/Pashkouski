@@ -3,7 +3,7 @@ import Checkbox from "antd/lib/checkbox/Checkbox";
 import {GooglePlusOutlined} from "@ant-design/icons";
 import useForm from "antd/lib/form/hooks/useForm";
 import s from './login.module.css'
-import {useCheckEmailMutation} from "@redux/api/auth-api.ts";
+import {useCheckEmailMutation, useLazyAuthGoogleQuery} from "@redux/api/auth-api.ts";
 import {useLocation, useNavigate} from "react-router-dom";
 import {validateEmail} from "@utils/validateEmail.ts";
 import Link from "antd/lib/typography/Link";
@@ -24,7 +24,8 @@ export type ErrorType = {
 }
 
 export const Login = () => {
-    const [checkEmail, {data: checkEmailData, isError: isErrorCheckEmail, error: errorCheckEmail,
+    const [checkEmail, {
+        data: checkEmailData, isError: isErrorCheckEmail, error: errorCheckEmail,
         isSuccess: isSuccessCheckEmail
     }] = useCheckEmailMutation({})
     const [form] = useForm();
@@ -38,10 +39,11 @@ export const Login = () => {
     const location = useLocation();
     const {usersLogin} = useLogin()
 
+
     const isDisabledEmail = !emailValue && password
     const handleValidate = async () => {
         try {
-           await form.validateFields();
+            await form.validateFields();
             setIsButtonDisabled(false); // Если поля валидны, разрешить наж кнопку
         } catch (error) {
             const emailErrors = form.getFieldError('email');
@@ -51,6 +53,8 @@ export const Login = () => {
 
     const handleClickForgetPassword = () => {
         const email = form.getFieldValue(('email'))
+
+
         if (!email) {
             setIsButtonDisabled(true);
         } else {
@@ -63,7 +67,7 @@ export const Login = () => {
         setEmailValue(res) //email valid
     };
 
-    const resetPasswordHeandler = async (email: {email: string })  => {
+    const resetPasswordHeandler = async (email: { email: string }) => {
         await checkEmail(email)
     };
 
@@ -84,15 +88,22 @@ export const Login = () => {
         }
     }, [checkEmailData, isErrorCheckEmail, errorCheckEmail, isSuccessCheckEmail, location, navigate, dispatch])
 
-    useEffect(() => {
-        if (redirect) {
-            const email = sessionStorage.getItem('email');
-            form.setFieldsValue({email: email})
-            sessionStorage.removeItem('redirect')
-            handleClickForgetPassword()
-        }
-    }, [])
 
+    //                       authGoogle
+
+
+    const [authGoogle, {isSuccess}] = useLazyAuthGoogleQuery({});
+
+    const handleGoogleAuth = async () => {
+        window.location.href = 'https://marathon-api.clevertec.ru/auth/google';
+        await authGoogle({});
+    };
+
+    useEffect(() => {
+        if (isSuccess) {
+            dispatch(push(paths.MAIN_PAGE, {state: {from: location}}))
+        }
+    }, [isSuccess, dispatch, location])
 
     return (
         <>
@@ -111,7 +122,6 @@ export const Login = () => {
                         rules={[{required: true, message: ''},
                             {validator: validateEmail}
                         ]}
-
                     >
                         <Input
                             addonBefore={<div>e-mail:</div>}
@@ -145,10 +155,9 @@ export const Login = () => {
                             name='rememberMe'
                             valuePropName={'checked'}
                             className={s.innerCheckbox}
-                            initialValue={!email}
+                            initialValue={false}
                         >
                             <Checkbox children={'Запомнить меня'}
-                                      defaultChecked={false}
                                       data-test-id='login-remember'
                             />
                         </Form.Item>
@@ -173,7 +182,11 @@ export const Login = () => {
                         >
                             Войти
                         </Button>
-                        <Button type='default' htmlType='submit' className={s.googleBtn}>
+                        <Button type='default'
+                                htmlType='submit'
+                                className={s.googleBtn}
+                                onClick={handleGoogleAuth}
+                        >
                             <GooglePlusOutlined/>
                             Войти через Google
                         </Button>

@@ -4,6 +4,7 @@ export const paths = {
     LOGIN: '/auth/login',
     REGISTRATION: '/auth/registration',
     MAIN_PAGE: '/main',
+    FEEDBACKS: '/feedbacks',
     PAGE_NOT_FOUND: '/404',
     FORGOT_PASSWORD: '/auth/forgot-password',
     SETTINGS: '/settings',

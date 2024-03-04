@@ -22,19 +22,30 @@ export const useLogin = (): ReturnUseLoginHooksType => {
     const location = useLocation()
     const dispatch = useAppDispatch()
 
+
+
     useEffect(() => {
         if (accessToken !== undefined) {
-            localStorage.setItem('token', accessToken)
-            dispatch(push(paths.MAIN_PAGE, {state: {from: location}}));
+
+            const rememberMe = localStorage.getItem('rememberMe')
+            rememberMe ?
+                localStorage.setItem('token', accessToken) :
+                sessionStorage.setItem('token', accessToken)
+
+
+                 dispatch(push(paths.MAIN_PAGE, {state: {from: location}}));
         }
         if (isError) {
             localStorage.removeItem('token')
+            sessionStorage.removeItem('token')
             dispatch(push(paths.ERROR_LOGIN, {state: {from: location}}));
         }
     }, [isError, accessToken, location, dispatch])
 
     const usersLogin = async (value: LoginBodyType) => {
-        const {email, password} = value;
+
+        const {email, password, rememberMe} = value;
+        rememberMe ? localStorage.setItem('rememberMe', 'true') : sessionStorage.setItem('rememberMe', 'true')
         await login({email, password})
     };
 

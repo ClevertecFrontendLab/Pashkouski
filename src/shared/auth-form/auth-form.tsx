@@ -5,10 +5,10 @@ import {Button, Typography} from 'antd';
 type AuthErrorType = {
     icon: ReactNode
     title: string
-    text: string
+    text?: string
     onClick: () => void
     buttonText: string
-    dataId: string
+    dataId?: string
     iconStyle?: CSSProperties
     containerStyle?: CSSProperties
     innerStyle?: CSSProperties
@@ -26,7 +26,7 @@ export const AuthForm = (value: AuthErrorType) => {
                 <div className={s.icon} style={res.iconStyle}>{icon}</div>
                 <div className={s.inner}>
                     <div>
-                        <Typography.Title level={1}>
+                        <Typography.Title level={1} style={res.titleStyle}>
                             {title}
                         </Typography.Title>
                         <Typography.Text >
