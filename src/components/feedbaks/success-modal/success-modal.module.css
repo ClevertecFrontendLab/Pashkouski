@@ -1,21 +1,3 @@
-.containerSuccessModal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-.wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    max-width: var(--gap-xxl-2_1);
-    width: 100%;
-    height: 100%;
-
-    margin: var(--gap-xs-2_5);
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -23,11 +5,6 @@
     align-items: center;
 
     background-color: var(--neutral-gray-1);
-
-    min-width: var(--gap-xl-3);
-    min-height: var(--gap-gx-5);
-    width: 100%;
-    padding: var(--gap-sm-7_5);
 }
 
 .icon {
@@ -53,44 +30,17 @@
     margin: var(--gap-xs-7) 0 0 0;
 }
 
-.inner :global(span.ant-typography){
-    display: block;
-    text-align: center;
-
-    font-weight: var(--font-weight-regular);
-
-    width: 100%;
-    padding: var(--gap-x-5) var(--gap-x-10_5) 0 var(--gap-x-10_5);
-}
-
-.inner :global(span.ant-typography){
-
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-regular);
-
-    color: var(--neutral-gray-7);
-
-    margin: 0;
-}
-
 .button {
+    width: 100%;
+    max-width: var(--gap-xl-3);
+    margin-top: var(--gap-xs-7);
+
+    background-color: var(--primary-light-6);
+}
+
+.modal :global(.ant-modal-footer) {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    background-color: var(--primary-light-6);
-    width: 100%;
-    max-width: 100%;
-    margin-top: var(--gap-xs-7);
-}
-
-
-.buttonClose {
-    border: var(--gap-x-1) solid var(--neutral-gray-5);
-}
-
-@media (width < 555px) {
-    .container {
-        padding: var(--gap-xs-3);
-    }
+    padding-bottom: var(--gap-s-10);
 }

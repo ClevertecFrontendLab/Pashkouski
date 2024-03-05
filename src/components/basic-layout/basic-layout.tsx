@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import s from '@components/basic-layout/basic-layout.module.css';
 import {Layout} from 'antd';
@@ -10,7 +10,7 @@ import {push} from "redux-first-history";
 import {paths} from "@constants/paths.ts";
 
 
-export const BasicLayout: React.FC = () => {
+export const BasicLayout = () => {
     const [open, setOpen] = useState(true);
     const breakpoints = useBreakpoint();
     const localToken = localStorage.getItem('token');
@@ -31,7 +31,6 @@ export const BasicLayout: React.FC = () => {
             window.removeEventListener('beforeunload', handleBeforeUnload);
         };
     }, [dispatch]);
-
 
     return (
         isLogin

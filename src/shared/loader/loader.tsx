@@ -18,11 +18,6 @@ export const Loader = () => {
         }
     };
 
-
-    // useEffect(() => {
-    //     setIsLoading(isLoadingSelector)
-    // }, [isLoadingSelector]);
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(isLoadingSelector);

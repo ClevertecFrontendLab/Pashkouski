@@ -1,38 +1,36 @@
 import {Successful} from "@assets/img/successful.tsx";
 import s from '@components/feedbaks/success-modal/success-modal.module.css'
-import {Button, Typography} from "antd";
+import {Button, Modal, Typography} from "antd";
 
 type SuccessModalType = {
-    onClick: () => void
+    onCancel: () => void
+    siOpen: boolean
 }
 
-export const SuccessModal = ({onClick}: SuccessModalType) => {
-
-
+export const SuccessModal = ({onCancel, siOpen}: SuccessModalType) => {
     return (
-        <div className={s.containerSuccessModal}>
-            <div className={s.wrapper}>
-                <div className={s.container}>
-                    <div className={s.icon}>{<Successful/>}</div>
-                    <div className={s.inner}>
-                        <div>
-                            <Typography.Title level={1}>
-                                Отзыв успешно опубликован
-                            </Typography.Title>
-                        </div>
-                            <Button
-                                className={s.button}
-                                type='primary'
-                                onClick={onClick}
-
-                            >
-                                Отлично
-                            </Button>
-
-                    </div>
+        <Modal
+            open={siOpen}
+            onCancel={onCancel}
+            className={s.modal}
+            footer={[
+                <Button key="ok"
+                        type="primary"
+                        onClick={onCancel}
+                        className={s.button}
+                >
+                    Отлично
+                </Button>
+            ]}
+        >
+            <div className={s.container}>
+                <div className={s.icon}><Successful/></div>
+                <div className={s.inner}>
+                    <Typography.Title level={1}>Отзыв успешно опубликован</Typography.Title>
                 </div>
             </div>
-        </div>
+        </Modal>
     );
 };
+
 

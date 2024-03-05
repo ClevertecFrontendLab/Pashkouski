@@ -1,24 +1,25 @@
 import {FeedbackPost} from "@components/feedbaks/feedback-post/feedback-post.tsx";
 import s from '@components/feedbaks/feedbacks-commetns/feedbacks-commetns.module.css'
 import {FeedbackNoPosts} from "@components/feedbaks/feedback-no-posts/feedback-no-posts.tsx";
+import {useMemo} from "react";
 
 type FeedbacksCommetnsType = {
     isOpen: boolean
-    data: [FeedbackCommetnType] | []
+    data: Array<FeedbackCommetnType> | []
 }
 export type FeedbackCommetnType = {
     id: string;
+    rating: number;
+    createdAt: string;
     fullName?: string | null;
     imageSrc?: string | null;
     message?: string | null;
-    rating: number;
-    createdAt: string;
 }
 
-
 export const FeedbacksCommetns = ({isOpen, data}: FeedbacksCommetnsType) => {
-
-    const sortedComments = [...data].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    const sortedComments = useMemo(() => {
+        return [...data].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    }, [data]);
 
     return (
         <div className={s.container} >

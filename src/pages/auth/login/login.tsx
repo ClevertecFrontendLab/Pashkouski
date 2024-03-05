@@ -3,7 +3,7 @@ import Checkbox from "antd/lib/checkbox/Checkbox";
 import {GooglePlusOutlined} from "@ant-design/icons";
 import useForm from "antd/lib/form/hooks/useForm";
 import s from './login.module.css'
-import {useCheckEmailMutation, useLazyAuthGoogleQuery} from "@redux/api/auth-api.ts";
+import {useCheckEmailMutation} from "@redux/api/auth-api.ts";
 import {useLocation, useNavigate} from "react-router-dom";
 import {validateEmail} from "@utils/validateEmail.ts";
 import Link from "antd/lib/typography/Link";
@@ -12,7 +12,7 @@ import {useLogin} from "@hooks/useLogin.ts";
 import {useAppDispatch} from "@hooks/typed-react-redux-hooks.ts";
 import {push} from "redux-first-history";
 import {paths} from "@constants/paths.ts";
-
+import {history} from '@redux/configure-store';
 
 export type ErrorType = {
     status: number
@@ -27,7 +27,7 @@ export const Login = () => {
     const [checkEmail, {
         data: checkEmailData, isError: isErrorCheckEmail, error: errorCheckEmail,
         isSuccess: isSuccessCheckEmail
-    }] = useCheckEmailMutation({})
+    }] = useCheckEmailMutation()
     const [form] = useForm();
     const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
     const [emailValue, setEmailValue] = useState()
@@ -71,7 +71,6 @@ export const Login = () => {
         await checkEmail(email)
     };
 
-
     useEffect(() => {
         if (isSuccessCheckEmail) {
             dispatch(push(paths.CONFIRM_EMAIL, {state: {from: location}}));
@@ -88,22 +87,19 @@ export const Login = () => {
         }
     }, [checkEmailData, isErrorCheckEmail, errorCheckEmail, isSuccessCheckEmail, location, navigate, dispatch])
 
-
-    //                       authGoogle
-
-
-    const [authGoogle, {isSuccess}] = useLazyAuthGoogleQuery({});
-
-    const handleGoogleAuth = async () => {
+    const handleGoogleAuth = () => {
         window.location.href = 'https://marathon-api.clevertec.ru/auth/google';
-        await authGoogle({});
     };
 
     useEffect(() => {
-        if (isSuccess) {
+        const accessTokenGoogle = new URLSearchParams(history.location.state?.from?.search).get(
+            'accessToken',
+        );
+        if (accessTokenGoogle !== null) {
+            sessionStorage.setItem('token', accessTokenGoogle);
             dispatch(push(paths.MAIN_PAGE, {state: {from: location}}))
         }
-    }, [isSuccess, dispatch, location])
+    }, []);
 
     return (
         <>
@@ -139,7 +135,6 @@ export const Login = () => {
                                 validateTrigger: 'onBlur',
                                 min: 8
                             },
-                            // {validator: validatePassword}
                         ]}
                     >
                         <Input.Password
@@ -148,7 +143,6 @@ export const Login = () => {
                             data-test-id='login-password'
                         />
                     </Form.Item>
-
 
                     <Form.Item className={s.innerCheckboxButton}>
                         <Form.Item
@@ -170,10 +164,7 @@ export const Login = () => {
                         </Link>
                     </Form.Item>
 
-
-                    <Form.Item className={s.innerButtonBlock}
-
-                    >
+                    <Form.Item className={s.innerButtonBlock}>
                         <Button
                             type='primary'
                             htmlType='submit'

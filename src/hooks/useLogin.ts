@@ -17,7 +17,7 @@ type ReturnUseLoginHooksType = {
 }
 
 export const useLogin = (): ReturnUseLoginHooksType => {
-    const [login, {data, isError}] = useLoginMutation({})
+    const [login, {data, isError}] = useLoginMutation()
     const {accessToken} = data || {};
     const location = useLocation()
     const dispatch = useAppDispatch()
@@ -26,13 +26,10 @@ export const useLogin = (): ReturnUseLoginHooksType => {
 
     useEffect(() => {
         if (accessToken !== undefined) {
-
             const rememberMe = localStorage.getItem('rememberMe')
             rememberMe ?
                 localStorage.setItem('token', accessToken) :
                 sessionStorage.setItem('token', accessToken)
-
-
                  dispatch(push(paths.MAIN_PAGE, {state: {from: location}}));
         }
         if (isError) {
@@ -41,6 +38,9 @@ export const useLogin = (): ReturnUseLoginHooksType => {
             dispatch(push(paths.ERROR_LOGIN, {state: {from: location}}));
         }
     }, [isError, accessToken, location, dispatch])
+
+
+
 
     const usersLogin = async (value: LoginBodyType) => {
 

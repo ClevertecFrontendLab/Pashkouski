@@ -14,15 +14,15 @@ export const Footers = () => {
     const [getFeedbacks, {
         isSuccess: isSuccessGetFeedbacks,
         isError: isErrorGetFeedbacks, error: errorGetFeedbacks,
-    }] = useLazyGetFeedbackQuery({})
+    }] = useLazyGetFeedbackQuery()
     const dispatch = useAppDispatch()
     const location = useLocation()
 
 
-    const feedbacksHeandler = async () => {
+    const feedbacksHeandler = () => {
         const token = getToken()
         if (token) {
-            await getFeedbacks({})
+            getFeedbacks({})
         }
     };
 
@@ -32,7 +32,7 @@ export const Footers = () => {
             dispatch(push(paths.FEEDBACKS, {state: {from: location}}));
         }
         if (isErrorGetFeedbacks) {
-              if (errorGetFeedbacks?.status === 403) {
+            if (errorGetFeedbacks?.status === 403) {
                 dispatch(push(paths.AUTH));
                 sessionStorage.removeItem('token')
                 localStorage.removeItem('token')
@@ -49,7 +49,6 @@ export const Footers = () => {
 
     return (
         <>
-
             <section className={s.footer}>
                 <Button className={s.reviews}
                         onClick={feedbacksHeandler}

@@ -11,7 +11,7 @@ export const ErrorModalReview = ({onClickCancel}: ErrorModalReviewType) => {
         <div className={s.containerErrorModalReview}>
             <div className={s.wrapper}>
                 <div className={s.container}>
-                    <div className={s.icon}>{<ErrorCheckEmailIcon/>}</div>
+                    <div>{<ErrorCheckEmailIcon/>}</div>
                     <div className={s.inner}>
                         <div>
                             <Typography.Title level={1}>

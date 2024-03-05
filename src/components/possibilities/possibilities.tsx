@@ -27,25 +27,11 @@ export const Possibilities = () => {
     ];
     return (
         <div className={s.list}>
-            {/*<List*/}
-            {/*    itemLayout="horizontal"*/}
-            {/*    dataSource={data}*/}
-            {/*    size={'small'}*/}
-            {/*    renderItem={(item, index) => (*/}
-            {/*        <List.Item key={index}>*/}
-            {/*            {item.title && (*/}
-            {/*                <List.Item.Meta*/}
-            {/*                    description={item.title}*/}
-            {/*                />*/}
-            {/*            )}*/}
-            {/*        </List.Item>*/}
-            {/*    )}*/}
-            {/*/>*/}
-
             {data.map((item, index) => {
-                return <List key={index}>
-                    {item.message}
-                </List>
+                return (
+                    <List key={index}>
+                        {item.message}
+                    </List>)
             })}
         </div>
     );

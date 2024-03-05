@@ -1,4 +1,3 @@
-
 .wrapper {
     background-color: var(--neutral-gray-1);
     padding-bottom: var(--gap-sm-2);
@@ -24,9 +23,7 @@
     font-weight: var(--font-weight-regular);
 
     color: var(--primary-light-9);
-
 }
-
 
 .container :global(span.ant-typography) {
     font-size: var(--font-size-xs);

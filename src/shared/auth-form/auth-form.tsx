@@ -5,9 +5,9 @@ import {Button, Typography} from 'antd';
 type AuthErrorType = {
     icon: ReactNode
     title: string
-    text?: string
     onClick: () => void
     buttonText: string
+    text?: string
     dataId?: string
     iconStyle?: CSSProperties
     containerStyle?: CSSProperties

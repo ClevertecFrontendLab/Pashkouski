@@ -4,7 +4,7 @@ import {useEffect, useState} from "react";
 import {useLazyGetFeedbackQuery, useSendFeedbackMutation} from "@redux/api/feedbacks-api.ts";
 import {SuccessModal} from "@components/feedbaks/success-modal/success-modal.tsx";
 import {ErrorModal} from "@components/feedbaks/error-modal/error-modal.tsx";
-import {CustomStar} from "@components/feedbaks/feedback-post/feedback-post.tsx";
+import {CustomStar} from "@components/feedbaks/feedback-post/custom-star.tsx";
 
 
 type FeedbacksFooterType = {
@@ -14,21 +14,21 @@ type FeedbacksFooterType = {
 }
 
 export const FeedbacksFooter = (props: FeedbacksFooterType) => {
-    const [sendFeedback, {isError, isSuccess}] = useSendFeedbackMutation({})
-    const [getFeedbacks] = useLazyGetFeedbackQuery({})
+    const [sendFeedback, {isError, isSuccess}] = useSendFeedbackMutation()
+    const [getFeedbacks] = useLazyGetFeedbackQuery()
     const {isOpen, collapsed, noPostsBtn} = props
 
     const [visible, setVisible] = useState(false);
-
     const [isSuccessModal, setIsSuccessModal] = useState(false)
     const [isErrorModal, setIsErrorModal] = useState(false)
+
     const [form] = Form.useForm()
     const rating = Form.useWatch('rating', form);
     const message = Form.useWatch('message', form);
 
     const handleOk = async () => {
         if (rating !== null) {
-            await sendFeedback({message, rating})
+           await sendFeedback({message, rating})
         }
     };
 
@@ -37,13 +37,12 @@ export const FeedbacksFooter = (props: FeedbacksFooterType) => {
         form.resetFields()
     };
 
-    const feedbacks = async () => {
-        await getFeedbacks({})
+    const feedbacks = () => {
+        getFeedbacks({})
     }
     const handleSuccessModal = () => {
         setIsSuccessModal(false)
     }
-
 
     const handleErrorModal = () => {
         setIsErrorModal(false)
@@ -54,7 +53,6 @@ export const FeedbacksFooter = (props: FeedbacksFooterType) => {
         setIsErrorModal(false)
         handleCancel()
     }
-
 
     useEffect(() => {
         if (isSuccess) {
@@ -69,18 +67,20 @@ export const FeedbacksFooter = (props: FeedbacksFooterType) => {
         }
     }, [isSuccess, isError])
 
-
     return (
 
         <div className={s.containerFeedbacksFooter}>
             {isSuccessModal && (
                 <div className={s.successModal}>
-                    <SuccessModal onClick={handleSuccessModal}/>
+                    <SuccessModal siOpen={isSuccessModal } onCancel={handleSuccessModal}/>
                 </div>
             )}
             {isErrorModal && (
                 <div className={s.errorModal}>
-                    <ErrorModal onClick={handleErrorModal} onClickCancel={handleCancelErrorModal}/>
+                    <ErrorModal onClick={handleErrorModal}
+                                onClickCancel={handleCancelErrorModal}
+                                isOpen={isErrorModal}
+                    />
                 </div>
             )}
 
@@ -143,7 +143,7 @@ export const FeedbacksFooter = (props: FeedbacksFooterType) => {
 
                                 >
                                     <Rate
-                                        character={CustomStar}
+                                        character={({ index, value }) => <CustomStar index={index} value={value}/>}
                                         defaultValue={-1}
                                     />
                                 </Form.Item>

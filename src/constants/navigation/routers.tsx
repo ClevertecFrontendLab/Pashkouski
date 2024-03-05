@@ -1,4 +1,4 @@
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {BasicLayout} from "@components/basic-layout/basic-layout.tsx";
 import {AuthLayout} from "@components/auth-layout/auth-layout.tsx";
 import {Auth} from "@pages/auth/auth/auth.tsx";
@@ -15,16 +15,13 @@ import {ErrorChangePassword} from "@shared/error-change-password/error-change-pa
 import {SuccessChangePassword} from "@shared/success-change-password/success-change-password.tsx";
 import {MainPage} from "@pages/main-page/main-page.tsx";
 import {Feedbacks} from "@pages/feedbacks/feedbacks.tsx";
+import {Redirect} from "@pages/auth/redirect/redirect.tsx";
 
 
 export const routes = [
     {
         element: <BasicLayout/>,
         children: [
-            {
-                path: paths.MAIN,
-                element: <Navigate to={paths.MAIN_PAGE}/>,
-            },
             {
                 path: paths.MAIN_PAGE,
                 element: <MainPage />,
@@ -91,7 +88,7 @@ export const routes = [
     },
     {
         path: '*',
-        element: <Navigate to={paths.AUTH}/>,
+        element: <Redirect/>,
     },
 ]
 

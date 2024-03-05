@@ -30,7 +30,7 @@
     --font-size-m: 24px;
     --font-size-l: 36px;
     --font-size-l_1: 38px;
-    --font-size-xl: 42px; /*--font-size-xxl: ..*/
+    --font-size-xl: 42px;
 
     /*font weights */
     --font-weight-regular: 400;
@@ -86,6 +86,7 @@
 
     --gap-g-0_5: 120px;
     --gap-g-1: 130px;
+    --gap-g-1_3: 133px;
     --gap-g-2: 150px;
     --gap-g-4: 160px;
     --gap-g-6: 170px;
@@ -119,7 +120,6 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-
 }
 
 @media (width < 768px) {
