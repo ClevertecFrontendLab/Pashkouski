@@ -18,7 +18,6 @@ export const ErrorCheckEmail = () => {
 
 
     const onClickHandler = () => {
-
         dispatch(push(paths.LOGIN))
     }
 

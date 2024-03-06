@@ -4,8 +4,8 @@ const SvgComponent = (
     ref: Ref<SVGSVGElement>
 ) => (
     <svg  xmlns="http://www.w3.org/2000/svg"
-          width={371}
-          height={371}
+          width={250}
+          height={290}
           fill="none"
           ref={ref}
           {...props}>
@@ -75,4 +75,5 @@ const SvgComponent = (
 )
 const ForwardRef = forwardRef(SvgComponent)
 export const ErrorCheckEmailIcon = memo(ForwardRef)
+
 

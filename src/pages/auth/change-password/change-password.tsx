@@ -15,7 +15,7 @@ type hHandleOnFinishType = {
 }
 
 export const ChangePassword = () => {
-    const [changePassword] = useChangePasswordMutation({})
+    const [changePassword] = useChangePasswordMutation()
     const [form] = useForm();
     const {state} = useLocation();
     const password = Form.useWatch('password', form);

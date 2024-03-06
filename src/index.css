@@ -30,7 +30,7 @@
     --font-size-m: 24px;
     --font-size-l: 36px;
     --font-size-l_1: 38px;
-    --font-size-xl: 42px; /*--font-size-xxl: ..*/
+    --font-size-xl: 42px;
 
     /*font weights */
     --font-weight-regular: 400;
@@ -56,6 +56,7 @@
     --gap-xs-5: 20px;
     --gap-xs-6: 22px;
     --gap-xs-7: 24px;
+    --gap-xs-7_5: 25px;
     --gap-xs-8: 26px;
     --gap-xs-10: 30px;
 
@@ -83,8 +84,9 @@
 
 
 
-
+    --gap-g-0_5: 120px;
     --gap-g-1: 130px;
+    --gap-g-1_3: 133px;
     --gap-g-2: 150px;
     --gap-g-4: 160px;
     --gap-g-6: 170px;
@@ -108,6 +110,7 @@
 
     --gap-xxl-2: 500px;
     --gap-xxl-2_1: 540px;
+    --gap-xxl-2_2: 550px;
     --gap-xxl-3: 600px;
     --gap-xxl-4: 700px;
     --gap-xxl-6: 800px;

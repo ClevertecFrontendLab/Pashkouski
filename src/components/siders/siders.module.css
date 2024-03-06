@@ -3,7 +3,7 @@
     height: auto;
 
     background-color: var(--neutral-gray-1);
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 var(--gap-x-8) rgba(0, 0, 0, 0.15);
     filter: blur(0 8);
 }
 
@@ -29,27 +29,33 @@
 .logo {
     display: flex;
     justify-content: center;
-    width: 100%;
-    background-color: var(--neutral-gray-1);
-    height: auto;
-    padding: 40px 30px 40px 20px;
 
+    width: 100%;
+    height: auto;
+
+    background-color: var(--neutral-gray-1);
+
+    padding: var(--gap-s-5) var(--gap-xs-10) var(--gap-s-5) var(--gap-xs-5);
 }
 
 .logoMini {
     display: flex;
     justify-content: center;
+
     width: 100%;
-    background-color: var(--neutral-gray-1);
     height: auto;
-    margin: 25px 0;
+    margin: var(--gap-xs-7_5) 0;
+
+    background-color: var(--neutral-gray-1);
+
+
 }
 
 .innerMenu {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - var(--gap-g-0_5));
     background-color: var(--neutral-gray-1);
 }
 
@@ -58,7 +64,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: calc(100vh - 60px);
+    min-height: calc(100vh - var(--gap-sm-5));
     background-color: var(--neutral-gray-1);
 }
 

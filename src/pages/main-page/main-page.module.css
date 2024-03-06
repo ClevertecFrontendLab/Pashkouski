@@ -1,0 +1,20 @@
+.siteLayout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-height: 100%;
+    min-height: 100vh;
+
+    background-image: url("@assets/mainPageLight.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 var(--gap-x-8) rgba(0, 0, 0, 0.15);
+}
+
+@media (width < 768px) {
+    .siteLayout {
+        overflow-y: scroll;
+        height: auto;
+    }
+}

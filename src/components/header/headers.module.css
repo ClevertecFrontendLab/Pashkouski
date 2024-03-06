@@ -42,7 +42,7 @@
     align-items: center;
 
     background-color: var(--neutral-gray-1);
-    border: 1px var(--neutral-gray-5);
+    border: var(--gap-x-1) var(--neutral-gray-5);
 
     min-width: var(--gap-s-1);
     min-height: var( --gap-s-1);
@@ -52,9 +52,11 @@
 
 @media (width < 1000px) {
     .header :global(h1.ant-typography) {
-        font-weight: var(--font-weight-medium);
-        font-size: var(--font-size-m);
         line-height: var(--line-height-m);
+
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-s_2);
+
     }
 }
 
@@ -63,8 +65,6 @@
         margin-left: var(--gap-x-10);
         padding-top: var(--gap-x-10);
 
-        font-weight: var(--font-weight-medium);
-        font-size: var(--font-size-s_2);
 
         border: none;
         cursor: pointer;

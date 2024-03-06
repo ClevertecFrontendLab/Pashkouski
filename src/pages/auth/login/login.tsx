@@ -12,7 +12,7 @@ import {useLogin} from "@hooks/useLogin.ts";
 import {useAppDispatch} from "@hooks/typed-react-redux-hooks.ts";
 import {push} from "redux-first-history";
 import {paths} from "@constants/paths.ts";
-
+import {history} from '@redux/configure-store';
 
 export type ErrorType = {
     status: number
@@ -24,9 +24,10 @@ export type ErrorType = {
 }
 
 export const Login = () => {
-    const [checkEmail, {data: checkEmailData, isError: isErrorCheckEmail, error: errorCheckEmail,
+    const [checkEmail, {
+        data: checkEmailData, isError: isErrorCheckEmail, error: errorCheckEmail,
         isSuccess: isSuccessCheckEmail
-    }] = useCheckEmailMutation({})
+    }] = useCheckEmailMutation()
     const [form] = useForm();
     const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
     const [emailValue, setEmailValue] = useState()
@@ -38,10 +39,11 @@ export const Login = () => {
     const location = useLocation();
     const {usersLogin} = useLogin()
 
+
     const isDisabledEmail = !emailValue && password
     const handleValidate = async () => {
         try {
-           await form.validateFields();
+            await form.validateFields();
             setIsButtonDisabled(false); // Если поля валидны, разрешить наж кнопку
         } catch (error) {
             const emailErrors = form.getFieldError('email');
@@ -51,6 +53,8 @@ export const Login = () => {
 
     const handleClickForgetPassword = () => {
         const email = form.getFieldValue(('email'))
+
+
         if (!email) {
             setIsButtonDisabled(true);
         } else {
@@ -63,10 +67,9 @@ export const Login = () => {
         setEmailValue(res) //email valid
     };
 
-    const resetPasswordHeandler = async (email: {email: string })  => {
+    const resetPasswordHeandler = async (email: { email: string }) => {
         await checkEmail(email)
     };
-
 
     useEffect(() => {
         if (isSuccessCheckEmail) {
@@ -84,15 +87,19 @@ export const Login = () => {
         }
     }, [checkEmailData, isErrorCheckEmail, errorCheckEmail, isSuccessCheckEmail, location, navigate, dispatch])
 
-    useEffect(() => {
-        if (redirect) {
-            const email = sessionStorage.getItem('email');
-            form.setFieldsValue({email: email})
-            sessionStorage.removeItem('redirect')
-            handleClickForgetPassword()
-        }
-    }, [])
+    const handleGoogleAuth = () => {
+        window.location.href = 'https://marathon-api.clevertec.ru/auth/google';
+    };
 
+    useEffect(() => {
+        const accessTokenGoogle = new URLSearchParams(history.location.state?.from?.search).get(
+            'accessToken',
+        );
+        if (accessTokenGoogle !== null) {
+            sessionStorage.setItem('token', accessTokenGoogle);
+            dispatch(push(paths.MAIN_PAGE, {state: {from: location}}))
+        }
+    }, []);
 
     return (
         <>
@@ -111,7 +118,6 @@ export const Login = () => {
                         rules={[{required: true, message: ''},
                             {validator: validateEmail}
                         ]}
-
                     >
                         <Input
                             addonBefore={<div>e-mail:</div>}
@@ -129,7 +135,6 @@ export const Login = () => {
                                 validateTrigger: 'onBlur',
                                 min: 8
                             },
-                            // {validator: validatePassword}
                         ]}
                     >
                         <Input.Password
@@ -139,16 +144,14 @@ export const Login = () => {
                         />
                     </Form.Item>
 
-
                     <Form.Item className={s.innerCheckboxButton}>
                         <Form.Item
                             name='rememberMe'
                             valuePropName={'checked'}
                             className={s.innerCheckbox}
-                            initialValue={!email}
+                            initialValue={false}
                         >
                             <Checkbox children={'Запомнить меня'}
-                                      defaultChecked={false}
                                       data-test-id='login-remember'
                             />
                         </Form.Item>
@@ -161,10 +164,7 @@ export const Login = () => {
                         </Link>
                     </Form.Item>
 
-
-                    <Form.Item className={s.innerButtonBlock}
-
-                    >
+                    <Form.Item className={s.innerButtonBlock}>
                         <Button
                             type='primary'
                             htmlType='submit'
@@ -173,7 +173,11 @@ export const Login = () => {
                         >
                             Войти
                         </Button>
-                        <Button type='default' htmlType='submit' className={s.googleBtn}>
+                        <Button type='default'
+                                htmlType='submit'
+                                className={s.googleBtn}
+                                onClick={handleGoogleAuth}
+                        >
                             <GooglePlusOutlined/>
                             Войти через Google
                         </Button>

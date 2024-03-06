@@ -1,0 +1,99 @@
+.containerFeedbacksFooter {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedbacksFooter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: var(--gap-x-8);
+    margin: var(--gap-xs-7) auto;
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.feedbacksFooterNoPost {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+
+    width: 100%;
+    margin-top: var(--gap-xs-5);
+}
+
+
+.btnNoPost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--primary-light-6);
+
+    width: 100%;
+}
+
+.successModal {
+    position: absolute;
+    display: block;
+
+    background-color: rgba(121, 156, 212, 0.5);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+
+    z-index: 10;
+}
+
+.errorModal {
+    position: absolute;
+    display: block;
+
+    background-color: rgba(121, 156, 212, 0.5);
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 320px;
+    height: 100%;
+
+    z-index: 10;
+}
+
+@media (width < 572px) {
+    .feedbacksFooter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnWrapper {
+        display: inline-block;
+        gap: var(--gap-xs-3);
+    }
+
+    .btnWrapper :global(.ant-btn) {
+        width: 100%;
+    }
+
+    .btnNoPost {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .feedbacksFooterNoPost {
+        display: inline-block;
+    }
+}
+

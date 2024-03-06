@@ -95,7 +95,6 @@ export const authApi = baseApi.injectEndpoints({
                     }
                 },
             },),
-
         }
     },
 })
@@ -105,6 +104,6 @@ export const {
     useLoginMutation,
     useCheckEmailMutation,
     useConfirmEmailMutation,
-    useChangePasswordMutation
+    useChangePasswordMutation,
 } = authApi
 

@@ -1,0 +1,6 @@
+.feedbacksHeader {
+    background-color: var(--light-geekblue-1);
+    width: auto;
+    padding: var(--gap-xs-3) var(--gap-xs-7) ;
+}
+

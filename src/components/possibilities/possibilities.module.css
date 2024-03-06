@@ -3,18 +3,14 @@
     margin-bottom: var(--gap-xs-7);
 
     background-color: var(--neutral-gray-1);
+
 }
 
-.list :global(.ant-list-item) {
+.list :global(.ant-list) {
     padding: 0;
     margin: 0;
 
     border: none;
-}
-
-.list :global(h4.ant-list-item-meta-title) {
-    padding: 0;
-    margin: 0;
 
     font-family: var(--font-family);
     font-weight: var(--font-weight-regular);
@@ -23,6 +19,7 @@
     color: var(--primary-light-9);
     background-color: var(--neutral-gray-1);
 }
+
 
 @media (width < 670px) {
     .list {

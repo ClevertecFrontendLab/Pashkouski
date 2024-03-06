@@ -1,12 +1,20 @@
+.containerErrorModalReview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
 .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
 
+    max-width: var(--gap-xxl-2_1);
     width: 100%;
     height: 100%;
     margin: var(--gap-xs-2_5);
-    max-width: var(--gap-xxl-2_1);
 }
 
 .container {
@@ -17,14 +25,10 @@
 
     background-color: var(--neutral-gray-1);
 
-    width: 100%;
     min-width: var(--gap-xl-3);
     min-height: var(--gap-gx-5);
+    width: 100%;
     padding: var(--gap-sm-7_5);
-}
-
-.icon {
-    margin-top: var(--gap-xs-5);
 }
 
 .inner {
@@ -34,66 +38,51 @@
     flex-direction: column;
 }
 
-.inner :global(h3.ant-typography){
+
+.inner :global(h1.ant-typography){
     text-align: center;
-    font-size: var(--font-size-m);
+
+    font-size: var(--gap-xs-7);
     font-weight: var(--font-weight-medium);
+
     color: var(--neutral-gray-10);
+
     margin: var(--gap-xs-7) 0 0 0;
 }
 
+.inner :global(span.ant-typography){
+    display: block;
+    text-align: center;
 
+    font-weight: var(--font-weight-regular);
 
+    width: 100%;
+    padding: var(--gap-x-5) var(--gap-x-10_5) 0 var(--gap-x-10_5);
+}
 
 .inner :global(span.ant-typography){
-    display: inline-block;
-    text-align: center;
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-regular);
+
     color: var(--neutral-gray-7);
+
     margin: 0;
 }
 
-.text {
-    width: 100%;
-    margin-top: var(--gap-xs-7);
-}
-.verificationInput {
-    margin: var(--gap-xs-5) 0 ;
-
-}
-
-
-.characterInactive {
-    background: transparent;
-}
-
-.verification {
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-
-.verificationError {
+.button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-color: var(--light-dustRed-5);
+
+    background-color: var(--primary-light-6);
+
+    max-width: 100%;
+    width: max-content;
+    margin-top: var(--gap-xs-7);
 }
 
-.containerVerification {
-    gap: var(--gap-xs-1);
-    height: var(--gap-s-5);
-}
-
-@media (width < 568px) {
+@media (width < 555px) {
     .container {
-        padding: var(--gap-xs-10) var(--gap-xs-3) ;
-    }
-    .containerVerification {
-        gap: var(--gap-x-8);
-    }
-    .brTitle {
-        display: none;
+        padding: var(--gap-xs-3);
     }
 }

@@ -19,7 +19,6 @@ import {paths} from "@constants/paths.ts";
 import {SidersType} from "@components/siders/siders-type.ts";
 
 
-
 export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestId}) => {
     const breakpoints = useBreakpoint();
     const LogOut = (props: Partial<CustomIconComponentProps>) => (
@@ -31,9 +30,11 @@ export const Siders: FC<SidersType> = ({open, setOpen, collapsedWidth, dataTestI
     const dispatch = useAppDispatch();
 
     const logoutHandler = () => {
-                localStorage.removeItem('token');
-                sessionStorage.removeItem('token');
-                dispatch(push(paths.LOGIN));
+        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
+        localStorage.removeItem('rememberMe');
+        sessionStorage.removeItem('rememberMe');
+        dispatch(push(paths.LOGIN));
     };
 
     const items = [

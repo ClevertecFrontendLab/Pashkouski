@@ -17,7 +17,6 @@ export const Registration = () => {
     const [registration, {isError, isSuccess, error}] = useRegistrationMutation()
     const [form] = useForm();
     const [emailValue, setEmailValue] = useState()
-    // const email = Form.useWatch('email', form);
     const password = Form.useWatch('password', form);
     const repeatPassword = Form.useWatch('repeatPassword', form);
     const disabledBtn = !emailValue && password && password === repeatPassword;
